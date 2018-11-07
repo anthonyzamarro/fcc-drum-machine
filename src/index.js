@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import drumsDisplayReducer from "./reducers/drumsDisplayReducer";
+import rootReducer from "./reducers/combineReducers.js";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import * as serviceWorker from "./serviceWorker";
 
-const store = createStore(drumsDisplayReducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>

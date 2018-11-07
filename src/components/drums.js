@@ -5,25 +5,28 @@ import { drumClicked } from "../actions/drumsAction";
 class Drums extends Component {
   constructor(props) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(e) {
-    console.log("this is:", this);
-    this.props.itemClicked(true);
+  handleClick(d) {
+    let audio = new Audio(d.audio);
+    audio.play();
+    this.props.itemClicked(d);
   }
   render() {
+    let displayDrums = this.props.drumData.drumData.map(drum => {
+      return <li 
+        key={drum.id}
+        onClick={() => this.handleClick(drum)}
+        id={`key-${drum.key}`}
+        className="drum-pad">
+        {drum.key}
+        <audio src={drum.audio} className="clip" id={drum.key}></audio>
+      </li>
+    });
     return (
       <div>
         <ul>
-          <li onClick={() => this.handleClick()}>Q</li>
-          <li>W</li>
-          <li>E</li>
-          <li>A</li>
-          <li>S</li>
-          <li>D</li>
-          <li>Z</li>
-          <li>X</li>
-          <li>C</li>
+        {displayDrums}
         </ul>
       </div>
     );
@@ -31,9 +34,8 @@ class Drums extends Component {
 }
 
 function mapStateToProps(drum_data) {
-  console.log(drum_data);
   return {
-    drum_data
+    drumData: drum_data
   };
 }
 

@@ -3,6 +3,9 @@ export default function(state = null, action) {
     case "DRUM_CLICKED":
       console.log("drumsReducer: drum was clicked", action);
       return action.payload;
+      break;
+      default:
+      console.log('nah son');
   }
   return state;
 }
