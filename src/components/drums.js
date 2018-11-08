@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { drumClicked } from "../actions/drumsAction";
+import { drumPressed } from "../actions/drumsAction";
 
 class Drums extends Component {
   constructor(props) {
@@ -19,27 +20,27 @@ class Drums extends Component {
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleKeyPress.bind(this));
   }
-  handleKeyPress(event) {
-    if (event.key === 'q') {
-      console.log(event);
-    }
+  handleKeyPress(event, d) {
+    // this.props.itemPressed(event, d);
+    console.log(event, d);
   }
   render() {
     let displayDrums = this.props.drumData.drumData.map(drum => {
-      return <li 
-        key={drum.id}
-        onClick={() => this.handleClick(drum)}
-        id={`key-${drum.key}`}
-        className="drum-pad">
-        {drum.key}
-        <audio src={drum.audio} className="clip" id={drum.key}></audio>
-      </li>
+      return (
+        <li
+          key={drum.id}
+          onClick={() => this.handleClick(drum)}
+          id={`key-${drum.key}`}
+          className="drum-pad"
+        >
+          {drum.key}
+          <audio src={drum.audio} className="clip" id={drum.key} />
+        </li>
+      );
     });
     return (
-      <div onKeyDown={(e) => this.handleKeyPress(e)}>
-        <ul>
-        {displayDrums}
-        </ul>
+      <div>
+        <ul onKeyUp={e => this.handleKeyPress(e)}>{displayDrums}</ul>
       </div>
     );
   }
@@ -55,6 +56,9 @@ function mapDispatchToProps(dispatch) {
   return {
     itemClicked: data => {
       dispatch(drumClicked(data));
+    },
+    itemPressed: data => {
+      dispatch(drumPressed(data));
     }
   };
 }
