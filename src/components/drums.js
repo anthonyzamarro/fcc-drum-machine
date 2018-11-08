@@ -6,11 +6,23 @@ class Drums extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    // this.handleKeyPress = this.handleKeyPress.bind(this);
   }
   handleClick(d) {
     let audio = new Audio(d.audio);
     audio.play();
     this.props.itemClicked(d);
+  }
+  componentWillMount() {
+    document.addEventListener("keydown", this.handleKeyPress.bind(this));
+  }
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyPress.bind(this));
+  }
+  handleKeyPress(event) {
+    if (event.key === 'q') {
+      console.log(event);
+    }
   }
   render() {
     let displayDrums = this.props.drumData.drumData.map(drum => {
@@ -24,7 +36,7 @@ class Drums extends Component {
       </li>
     });
     return (
-      <div>
+      <div onKeyDown={(e) => this.handleKeyPress(e)}>
         <ul>
         {displayDrums}
         </ul>
