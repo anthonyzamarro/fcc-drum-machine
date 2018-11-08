@@ -5,3 +5,11 @@ export function drumClicked(clicked) {
     payload: clicked
   };
 }
+
+export function drumPressed(pressed) {
+  console.log("drumsAction: action is ", pressed);
+  return {
+    type: "DRUM_PRESSED",
+    payload: pressed
+  };
+}
