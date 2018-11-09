@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Drums from "./components/drums";
+import DrumsInfo from "./components/drumsInfo";
 
 class App extends Component {
   render() {
@@ -7,6 +8,7 @@ class App extends Component {
       <div className="App drum-machine-container" id="drum-machine">
         <div className="display-container" id="display">
           <Drums />
+          <DrumsInfo />
         </div>
       </div>
     );

@@ -8,17 +8,17 @@ class Drums extends Component {
     super(props);
     this.state = {
       drum: this.props.drumData.drumData
-    }
+    };
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
   componentWillMount() {
-    document.addEventListener("keyup", (e) => this.handleKeyPress(e));
+    document.addEventListener("keyup", e => this.handleKeyPress(e));
   }
 
   componentWillUnmount() {
-    document.removeEventListener("keyup", (e) => this.handleKeyPress(e));
-  }  
+    document.removeEventListener("keyup", e => this.handleKeyPress(e));
+  }
   handleClick(d) {
     let audio = new Audio(d.audio);
     audio.play();
@@ -26,30 +26,30 @@ class Drums extends Component {
   }
   handleKeyPress(e) {
     this.state.drum.forEach(d => {
-      if (d.keyCode === e.key) {
+      if (e.key === d.keyCode) {
         let audio = new Audio(d.audio);
         audio.play();
-        this.props.itemPressed(d)
+        this.props.itemPressed(d);
       }
-    })
+    });
   }
   render() {
     let displayDrums = this.props.drumData.drumData.map(drum => {
-      return <li 
-        key={drum.id}
-        onClick={() => this.handleClick(drum)}
-        tabIndex='0'
-        id={`key-${drum.key}`}
-        className="drum-pad">
-        {drum.key}
-        <audio src={drum.audio} className="clip" id={drum.key}></audio>
-      </li>
+      return (
+        <li
+          key={drum.id}
+          onClick={() => this.handleClick(drum)}
+          id={`key-${drum.key}`}
+          className="drum-pad"
+        >
+          {drum.key}
+          <audio src={drum.audio} className="clip" id={drum.key} />
+        </li>
+      );
     });
     return (
       <div>
-        <ul>
-        {displayDrums}
-        </ul>
+        <ul>{displayDrums}</ul>
       </div>
     );
   }
