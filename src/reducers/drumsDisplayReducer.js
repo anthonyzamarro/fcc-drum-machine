@@ -16,54 +16,63 @@ export default function drumData() {
     {
       id: 1,
       key: 'Q',
+      keyCode: 'q',
       type: 'snare',
       audio: snare
     },
     {
       id: 2,
       key: 'W',
+      keyCode: 'w',
       type: 'crash',
       audio: crash
     },
     {
       id: 3,
       key: 'E',
+      keyCode: 'e',
       type: 'bass',
       audio: bass
     },
     {
       id: 4,
       key: 'A',
+      keyCode: 'a',
       type: 'floorTom',
       audio: floorTom
     },
     {
       id: 5,
       key: 'S',
+      keyCode: 's',
       type: 'tomTom',
       audio: tomTom
     },
     {
       id: 6,
       key: 'D',
+      keyCode: 'd',
       type: 'ride',
       audio: ride
     },
     {
       id: 7,
       key: 'Z',
+      keyCode: 'z',
       type: 'hiHat',
       audio: hiHat
     },
     {
       id: 8,
       key: 'X',
+      keyCode: 'x',
       type: 'hiHat',
       audio: hiHatClosed
     },
     {
       id: 9,
       key: 'C',
+      keyCode: 'c',
       type: 'gong',
       audio: gong
     }

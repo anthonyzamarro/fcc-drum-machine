@@ -6,41 +6,50 @@ import { drumPressed } from "../actions/drumsAction";
 class Drums extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      drum: this.props.drumData.drumData
+    }
     this.handleClick = this.handleClick.bind(this);
-    // this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
+  componentWillMount() {
+    document.addEventListener("keyup", (e) => this.handleKeyPress(e));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keyup", (e) => this.handleKeyPress(e));
+  }  
   handleClick(d) {
     let audio = new Audio(d.audio);
     audio.play();
     this.props.itemClicked(d);
   }
-  componentWillMount() {
-    document.addEventListener("keydown", this.handleKeyPress.bind(this));
-  }
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyPress.bind(this));
-  }
-  handleKeyPress(event, d) {
-    // this.props.itemPressed(event, d);
-    console.log(event, d);
+  handleKeyPress(e) {
+    this.state.drum.forEach(d => {
+      if (d.keyCode === e.key) {
+        let audio = new Audio(d.audio);
+        audio.play();
+        this.props.itemPressed(d)
+      }
+    })
   }
   render() {
     let displayDrums = this.props.drumData.drumData.map(drum => {
-      return (
-        <li
-          key={drum.id}
-          onClick={() => this.handleClick(drum)}
-          id={`key-${drum.key}`}
-          className="drum-pad"
-        >
-          {drum.key}
-          <audio src={drum.audio} className="clip" id={drum.key} />
-        </li>
-      );
+      return <li 
+        key={drum.id}
+        onClick={() => this.handleClick(drum)}
+        tabIndex='0'
+        id={`key-${drum.key}`}
+        className="drum-pad">
+        {drum.key}
+        <audio src={drum.audio} className="clip" id={drum.key}></audio>
+      </li>
     });
     return (
       <div>
-        <ul onKeyUp={e => this.handleKeyPress(e)}>{displayDrums}</ul>
+        <ul>
+        {displayDrums}
+        </ul>
       </div>
     );
   }
