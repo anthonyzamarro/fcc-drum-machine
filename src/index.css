@@ -36,7 +36,8 @@
       margin: 10px;
       border: 1px solid #e4e43d;
       border-radius: 5px;
-      box-shadow: 2px 2px 0px #19191A; }
+      box-shadow: 2px 2px 0px #19191A;
+      background: #6A9FB9; }
       .display-drums-container ul .drum-pad:hover {
         cursor: pointer; }
       .display-drums-container ul .drum-pad:focus {

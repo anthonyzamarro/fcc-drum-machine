@@ -21,15 +21,15 @@
 	max-width: 760px;
     margin: auto;
 	ul {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	background: #DB2B39;
-	border-radius: 5px;
-	margin: 5px 0;
-    padding: 10px 0;
-    box-shadow: 5px 3px 0px #19191A;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		background: #DB2B39;
+		border-radius: 5px;
+		margin: 5px 0;
+	    padding: 10px 0;
+	    box-shadow: 5px 3px 0px #19191A;
 		.drum-pad {
 			list-style: none;
 			flex: 0 0 125px;
@@ -38,6 +38,7 @@
 			border: 1px solid #e4e43d;
 			border-radius: 5px;
 			box-shadow: 2px 2px 0px #19191A;
+			background: #6A9FB9;
 			&:hover {
 				cursor: pointer;
 			}
