@@ -12,27 +12,18 @@ class Drums extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
-  componentWillMount() {
+  componentDidMount() {
     document.addEventListener("keyup", e => this.handleKeyPress(e));
   }
-
-  componentWillUnmount() {
-    document.removeEventListener("keyup", e => this.handleKeyPress(e));
-  }
   handleClick(e, d) {
-    // console.log("handleClick", e.target.children[0]);
-    // let audio = new Audio(d.audio);
-    // audio.play();
     e.target.children[0].play();
     this.props.itemClicked(d);
   }
   handleKeyPress(e) {
-    console.log(e.target);
     this.state.drum.forEach(d => {
       if (e.key === d.keyCode) {
-        let audio = new Audio(d.audio);
-        audio.play();
-        // e.target.children[0].play()
+        let currentDrum = document.querySelector(`#key-${d.key}`);
+        currentDrum.children[0].play()
         this.props.itemPressed(d);
       }
     });

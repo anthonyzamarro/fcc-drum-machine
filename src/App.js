@@ -9,7 +9,6 @@ class App extends Component {
         <div className="display-container" id="display">
           <DrumsInfo />
           <Drums />
-          <DrumsInfo />
         </div>
       </div>
     );
