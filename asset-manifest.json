@@ -1,0 +1,22 @@
+{
+  "main.css": "/fcc-drum-machine/static/css/main.02bf1bd9.chunk.css",
+  "main.js": "/fcc-drum-machine/static/js/main.17b1ced6.chunk.js",
+  "main.js.map": "/fcc-drum-machine/static/js/main.17b1ced6.chunk.js.map",
+  "static/js/1.63c5c257.chunk.js": "/fcc-drum-machine/static/js/1.63c5c257.chunk.js",
+  "static/js/1.63c5c257.chunk.js.map": "/fcc-drum-machine/static/js/1.63c5c257.chunk.js.map",
+  "runtime~main.js": "/fcc-drum-machine/static/js/runtime~main.6b38bc72.js",
+  "runtime~main.js.map": "/fcc-drum-machine/static/js/runtime~main.6b38bc72.js.map",
+  "static/media/snare.mp3": "/fcc-drum-machine/static/media/snare.29931dfa.mp3",
+  "static/media/bass.wav": "/fcc-drum-machine/static/media/bass.5e9cce80.wav",
+  "static/media/floor-tom.wav": "/fcc-drum-machine/static/media/floor-tom.01c7d131.wav",
+  "static/media/tom-tom.wav": "/fcc-drum-machine/static/media/tom-tom.b40f796f.wav",
+  "static/media/ride.wav": "/fcc-drum-machine/static/media/ride.3a196551.wav",
+  "static/media/hi-hat.wav": "/fcc-drum-machine/static/media/hi-hat.f84399ad.wav",
+  "static/media/hi-hat-closed.mp3": "/fcc-drum-machine/static/media/hi-hat-closed.0d385804.mp3",
+  "static/media/gong.wav": "/fcc-drum-machine/static/media/gong.5010ef2a.wav",
+  "static/media/crash.mp3": "/fcc-drum-machine/static/media/crash.ab3cc766.mp3",
+  "static/css/main.02bf1bd9.chunk.css.map": "/fcc-drum-machine/static/css/main.02bf1bd9.chunk.css.map",
+  "index.html": "/fcc-drum-machine/index.html",
+  "precache-manifest.8e103ad40ee278e30be4680effa518e3.js": "/fcc-drum-machine/precache-manifest.8e103ad40ee278e30be4680effa518e3.js",
+  "service-worker.js": "/fcc-drum-machine/service-worker.js"
+}
