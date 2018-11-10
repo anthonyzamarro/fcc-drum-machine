@@ -1,3 +1,7 @@
+.drum-machine-container {
+	max-width: 1200px;
+    margin: auto;
+}
 .display-container {
 	text-align: center;
 }
@@ -14,13 +18,14 @@
 	}
 }
 .display-drums-container {
+	max-width: 760px;
+    margin: auto;
 	ul {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	background: #DB2B39;
-	// background: linear-gradient(to top, #e66465, #DB2B39);
 	border-radius: 5px;
 	margin: 5px 0;
     padding: 10px 0;
@@ -34,9 +39,7 @@
 			border-radius: 5px;
 			box-shadow: 2px 2px 0px #19191A;
 			&:hover {
-				// background: #ededed;
 				cursor: pointer;
-				// border-radius: 5px;
 			}
 			&:focus {
 				outline: none;
@@ -44,6 +47,7 @@
 		}
 	}
 	.active {
-		background: blue;
+		background: #29335C;
+		color: #fff;
 	}
 }
