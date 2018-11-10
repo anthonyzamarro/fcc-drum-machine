@@ -19,16 +19,20 @@ class Drums extends Component {
   componentWillUnmount() {
     document.removeEventListener("keyup", e => this.handleKeyPress(e));
   }
-  handleClick(d) {
-    let audio = new Audio(d.audio);
-    audio.play();
+  handleClick(e, d) {
+    // console.log("handleClick", e.target.children[0]);
+    // let audio = new Audio(d.audio);
+    // audio.play();
+    e.target.children[0].play();
     this.props.itemClicked(d);
   }
   handleKeyPress(e) {
+    console.log(e.target);
     this.state.drum.forEach(d => {
       if (e.key === d.keyCode) {
         let audio = new Audio(d.audio);
         audio.play();
+        // e.target.children[0].play()
         this.props.itemPressed(d);
       }
     });
@@ -38,9 +42,10 @@ class Drums extends Component {
       return (
         <li
           key={drum.id}
-          onClick={() => this.handleClick(drum)}
+          onClick={e => this.handleClick(e, drum)}
           id={`key-${drum.key}`}
           className="drum-pad"
+          tabIndex="0"
         >
           {drum.key}
           <audio src={drum.audio} className="clip" id={drum.key} />

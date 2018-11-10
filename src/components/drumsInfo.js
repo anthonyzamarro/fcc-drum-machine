@@ -8,11 +8,9 @@ class DrumsInfo extends Component {
       this.props.data.drumz === null
         ? "Start Playing!"
         : this.props.data.drumz.type;
-    console.log(display);
     return (
       <div>
-        <h1>Drums Information, BABY! </h1>
-        <div>{display}</div>
+        <h1>{display}</h1>
       </div>
     );
   }

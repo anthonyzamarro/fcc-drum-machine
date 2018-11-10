@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <div className="App drum-machine-container" id="drum-machine">
         <div className="display-container" id="display">
+          <DrumsInfo />
           <Drums />
           <DrumsInfo />
         </div>
