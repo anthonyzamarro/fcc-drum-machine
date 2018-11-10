@@ -9,7 +9,7 @@ class DrumsInfo extends Component {
         ? "Start Playing!"
         : this.props.data.drumz.type;
     return (
-      <div>
+      <div className="drums-info-container">
         <h1>{display}</h1>
       </div>
     );
