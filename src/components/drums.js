@@ -14,7 +14,7 @@ class Drums extends Component {
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
   componentDidMount() {
-    document.addEventListener("keyup", e => this.handleKeyPress(e));
+    // document.addEventListener("keydown", e => this.handleKeyPress(e));
   }
   handleClick(e, d) {
     e.target.children[0].play();
@@ -45,9 +45,11 @@ class Drums extends Component {
         <li
           key={drum.id}
           onClick={e => this.handleClick(e, drum)}
+          onKeyPress={e => this.handleKeyPress(e)}
           id={`key-${drum.key}`}
           className={`drum-pad`}
           tabIndex="0"
+          ref={li => li && li.focus()}
         >
           {drum.key}
           <audio src={drum.audio} className="clip" id={drum.key} />
