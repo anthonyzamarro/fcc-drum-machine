@@ -27,8 +27,11 @@
     background: #DB2B39;
     border-radius: 5px;
     margin: 5px 0;
-    padding: 10px 0;
+    padding: 25px 100px;
     box-shadow: 5px 3px 0px #19191A; }
+    @media screen and (max-width: 603px) {
+      .display-drums-container ul {
+        padding: 25px 0px; } }
     .display-drums-container ul .drum-pad {
       list-style: none;
       flex: 0 0 125px;
