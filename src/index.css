@@ -1,3 +1,6 @@
+* {
+  font-family: Monaco; }
+
 .drum-machine-container {
   max-width: 1200px;
   margin: auto; }
